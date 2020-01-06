@@ -1,6 +1,6 @@
 {
     "name": "cgf-leapmotion-pd",
-    "main": "main.js",
+    "main": "main-processed.js",
     "version": "0.1.0",
     "dependencies": {
         "leapjs": "^0.6.4",

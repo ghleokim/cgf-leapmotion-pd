@@ -27,6 +27,7 @@ controller.loop(function (frame) {
             if (frame.hands[0]) {
                 const palm = frame.hands[0].palmNormal
                 const arm = frame.hands[0].arm.direction()
+                console.log(frame.hands[0].palmPosition)
                 
                 console.log(palm)
                 console.log(arm)

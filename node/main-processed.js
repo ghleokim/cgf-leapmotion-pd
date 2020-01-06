@@ -38,6 +38,8 @@ const CustomFingers = function (data) {
 }
 
 CustomFingers.prototype.getBends = function () {
+  // clip and mix for each joints in fingers
+  
   const options = {
     clip: {
       0: [0.25, 0.28, 0.3],
@@ -85,9 +87,10 @@ const controller = new Leap.Controller();
 const { Client, Message } = require('node-osc')
 
 controller.loop(function (frame) {
-  
+    // console.log(frame.currentFrameRate)
+    // console.log(1 && frame.id % 3 == 1)
     // console.log('connected')
-    if(frame.hands[0]) {
+    if(frame.hands[0] && frame.id % 8 == 1) {
       const a = new CustomFingers(frame.hands[0].fingers)
       // console.log(a.getBends())
       const bends = a.getBends()
@@ -123,6 +126,16 @@ controller.loop(function (frame) {
       msg2.append(wrist)
       msg2.append('s7_roll')
       msg2.append(roll)
+      
+      const palmPos = frame.hands[0].palmPosition
+
+      // added
+      msg2.append('s8_')
+      msg2.append(0)
+      msg2.append('s9_')
+      msg2.append(palmPos[2])
+      msg2.append('s10_')
+      msg2.append(palmPos[0])
 
       const client2 = new Client('localhost', 3000)
       client2.send(msg2, (err) => {

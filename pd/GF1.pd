@@ -7,7 +7,7 @@
 0;
 #N canvas 72 23 1368 855 playback 0;
 #X obj 108 174 tgl 15 0 empty empty PLAY/PAUSE 17 7 0 10 -4034 -1 -1
-1 1;
+0 1;
 #X obj 108 292 f;
 #X obj 138 292 + 1;
 #X floatatom 108 319 5 0 0 0 num_of_step - -;
@@ -72,7 +72,7 @@
 #X obj 20 140 spigot;
 #X obj 287 358 s \$0-e-o-s;
 #X obj 20 105 r \$0-e-o-s;
-#X obj 108 148 tgl 15 0 empty empty Loop 17 7 0 10 -262144 -1 -1 1
+#X obj 108 148 tgl 15 0 empty empty Loop 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 321 275 back to 0;
 #X msg 20 157 1;
@@ -612,8 +612,8 @@ duration \$2 \; \$1-s11-r duration \$2 \; \$1-s12-r duration \$2 \;
 #X obj 1431 408 int;
 #X obj 1546 408 int;
 #X obj 1585 408 int;
-#X msg 719 500 255 0 0 0 100 1 1 45 42 1 57 0 250 1 90 1 99 1 123 1
-210 0 191 1 138 1 23 1 120 1 204 1 120 0 0 7 79 0 0;
+#X msg 719 500 255 0 0 0 100 1 1 20 109 1 57 1 114 1 90 1 140 1 155
+1 125 1 105 0 0 1 105 1 120 1 0 1 124 0 0 6 145 0 0;
 #X obj 703 476 prepend set;
 #X floatatom 1468 386 5 0 0 2 s12 #0-s12 -;
 #X floatatom 1506 386 5 0 0 2 s13 #0-s13 -;
@@ -869,7 +869,7 @@ duration \$2 \; \$1-s11-r duration \$2 \; \$1-s12-r duration \$2 \;
 #X obj 110 510 r \$0-is_playing;
 #X obj 111 555 * -1;
 #X obj 110 532 - 1;
-#X obj 109 578 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 -0
+#X obj 109 578 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 237 514 don't send UDP data when playing;
 #X text 234 531 sliders are visualising the data and it's feeding when
@@ -1225,29 +1225,29 @@ s2_1 s2_2 ............... s13_1 s13_2 s14_1 s14_2 s15_1 s15_2;
 #X obj 16 961 breakpoints 1200 100 10000 \$0-st2-r \$0-st2-s \$0-st2-d
 ;
 #X obj 367 363 vsl 15 128 0 1 0 1 \$0-s1_slider_s \$0-s1-s s1 0 -9
-0 10 -262144 -1 -260097 6478 1;
+0 10 -262144 -1 -260097 6496 1;
 #X obj 406 363 vsl 15 128 0 1 0 1 \$0-s2_slider_s \$0-s2-s s2 0 -9
-0 10 -262144 -1 -260097 0 1;
+0 10 -262144 -1 -260097 5821 1;
 #X obj 446 363 vsl 15 128 0 1 0 1 \$0-s3_slider_s \$0-s3-s s3 0 -9
 0 10 -262144 -1 -260097 6350 1;
 #X obj 487 363 vsl 15 128 0 1 0 1 \$0-s4_slider_s \$0-s4-s s4 0 -9
-0 10 -262144 -1 -260097 4463 1;
+0 10 -262144 -1 -260097 6350 1;
 #X obj 528 363 vsl 15 128 0 1 0 1 \$0-s5_slider_s \$0-s5-s s5 0 -9
-0 10 -262144 -1 -260097 4353 1;
+0 10 -262144 -1 -260097 6350 1;
 #X obj 148 361 vsl 15 128 0 1 0 1 \$0-s6_slider_s \$0-s6-s s6 0 -9
-0 10 -262144 -1 -260097 9363 1;
+0 10 -262144 -1 -260097 6350 1;
 #X obj 188 361 vsl 15 128 0 1 0 1 \$0-s7_slider_s \$0-s7-s s7 0 -9
-0 10 -262144 -1 -260097 1180 1;
+0 10 -262144 -1 -260097 5933 1;
 #X obj 228 361 vsl 15 128 0 1 0 1 \$0-s8_slider_s \$0-s8-s s8 0 -9
-0 10 -262144 -1 -260097 10203 1;
+0 10 -262144 -1 -260097 11488 1;
 #X obj 270 361 vsl 15 128 0 1 0 1 \$0-s9_slider_s \$0-s9-s s9 0 -9
-0 10 -262144 -1 -260097 4821 1;
+0 10 -262144 -1 -260097 10615 1;
 #X obj 310 361 vsl 15 128 0 1 0 1 \$0-s10_slider_s \$0-s10-s s10 0
 -9 0 10 -262144 -1 -260097 6350 1;
 #X obj 581 362 vsl 15 128 0 1 0 1 \$0-s11_slider_s \$0-s11-s s11 0
--9 0 10 -262144 -1 -260097 8727 1;
+-9 0 10 -262144 -1 -260097 2982 1;
 #X obj 108 362 vsl 15 128 0 1 0 1 \$0-st2_slider_s \$0-st2-s st2 0
--9 0 10 -262144 -1 -260097 6360 1;
+-9 0 10 -262144 -1 -260097 2877 1;
 #X floatatom 270 497 5 0 0 0 - - -;
 #X floatatom 108 498 5 0 0 0 - - -;
 #X floatatom 367 499 5 0 0 0 - - -;
@@ -1257,13 +1257,13 @@ s2_1 s2_2 ............... s13_1 s13_2 s14_1 s14_2 s15_1 s15_2;
 #X floatatom 310 497 5 0 0 0 - - -;
 #X floatatom 581 498 5 0 0 0 - - -;
 #X obj 712 362 vsl 15 128 0 1 0 1 \$0-s14_slider_s \$0-s14-s s14 0
--9 0 10 -262144 -1 -260097 5784 1;
+-9 0 10 -262144 -1 -260097 5195 1;
 #X obj 752 362 vsl 15 128 0 1 0 1 \$0-s15_slider_s \$0-s15-s s15 0
 -9 0 10 -262144 -1 -260097 6350 1;
 #X floatatom 712 498 5 0 0 0 - - -;
 #X floatatom 752 498 5 0 0 0 - - -;
 #X obj 622 362 vsl 15 128 0 1 0 1 \$0-s12_slider_s \$0-s12-s s12 0
--9 0 10 -262144 -1 -260097 6350 1;
+-9 0 10 -262144 -1 -260097 6467 1;
 #X floatatom 622 498 5 0 0 0 - - -;
 #X floatatom 406 499 5 0 0 0 - - -;
 #X floatatom 446 499 5 0 0 0 - - -;
@@ -2588,13 +2588,13 @@ breakpoint editor. So close the data stream to breakpoint editor first
 #X text 457 76 Cook Send data to UDP;
 #X text 932 449 \$5 master=0 slave=1;
 #X obj 13 137 tgl 15 0 \$0-transport_play empty PLAY 17 7 0 10 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 79 137 bng 15 250 50 0 \$0-transport_stop Stop_Playing_Global
 STOP 17 7 0 10 -258113 -1 -1;
 #X obj 16 157 hsl 110 8 0 1000 0 1 empty \$0_tick empty -2 -8 0 10
 -262144 -1 -1 5733 1;
 #X obj 13 119 tgl 15 0 \$0-transport_loop empty Loop 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 1100 58 s \$0-step_number_from_inlet;
 #X obj 356 118 outlet;
 #X obj 21 33 inlet;
@@ -2758,8 +2758,7 @@ duration \$2 \; \$1-s11-r duration \$2 \; \$1-s12-r duration \$2 \;
 #X floatatom 229 329 5 0 1 0 - - -;
 #X obj 581 307 r \$1-neck-yaw;
 #X obj 622 327 r \$1-neck-roll;
-#X obj 446 313 r \$1-finger;
-#X obj 149 326 r \$1-wrist;
+#X obj 148 323 r \$1-wrist;
 #X obj 190 305 r \$1-wrist-roll;
 #X obj 896 160 dance_beat_osc;
 #X floatatom 896 225 5 0 0 0 - - -;
@@ -2770,6 +2769,13 @@ duration \$2 \; \$1-s11-r duration \$2 \; \$1-s12-r duration \$2 \;
 -1 -1;
 #X obj 941 285 s \$1-finger;
 #X obj 1038 111 r 4b;
+#X obj 367 305 r \$1-finger-1;
+#X obj 404 315 r \$1-finger-2;
+#X obj 447 326 r \$1-finger-3;
+#X obj 488 300 r \$1-finger-4;
+#X obj 524 316 r \$1-finger-5;
+#X obj 272 313 r \$1-sh-9;
+#X obj 310 334 r \$1-sh-10;
 #X connect 4 0 144 0;
 #X connect 4 1 144 1;
 #X connect 4 2 157 0;
@@ -2825,20 +2831,20 @@ duration \$2 \; \$1-s11-r duration \$2 \; \$1-s12-r duration \$2 \;
 #X connect 192 0 121 0;
 #X connect 193 0 124 0;
 #X connect 194 0 138 0;
-#X connect 195 0 114 0;
-#X connect 195 0 115 0;
-#X connect 195 0 116 0;
-#X connect 195 0 117 0;
-#X connect 195 0 118 0;
-#X connect 196 0 119 0;
-#X connect 197 0 120 0;
+#X connect 195 0 119 0;
+#X connect 196 0 120 0;
+#X connect 197 0 198 0;
 #X connect 198 0 199 0;
 #X connect 199 0 200 0;
 #X connect 200 0 201 0;
-#X connect 201 0 202 0;
-#X connect 202 0 134 0;
-#X connect 202 0 204 0;
-#X connect 202 0 120 0;
-#X connect 203 0 198 1;
-#X connect 205 0 203 0;
+#X connect 201 0 203 0;
+#X connect 202 0 197 1;
+#X connect 204 0 202 0;
+#X connect 205 0 114 0;
+#X connect 206 0 115 0;
+#X connect 207 0 116 0;
+#X connect 208 0 117 0;
+#X connect 209 0 118 0;
+#X connect 210 0 122 0;
+#X connect 211 0 123 0;
 #X coords 0 -1 1 1 120 70 1 10 100;
