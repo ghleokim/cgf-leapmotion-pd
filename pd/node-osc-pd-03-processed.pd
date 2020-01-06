@@ -9,23 +9,23 @@
 #X text 286 73 index and others 0.2 0.1 0.4;
 #X obj 68 113 routeOSC /hand;
 #X obj 55 406 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6346 1;
 #X symbolatom 117 170 10 0 0 0 - - -;
 #X floatatom 149 202 5 0 0 0 - - -;
 #X obj 135 409 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 9172 1;
 #X obj 474 113 routeOSC /fingers/processed;
 #X obj 474 164 unpack s f s f s f s f s f, f 52;
 #X obj 490 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1719 1;
 #X obj 561 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7665 1;
 #X obj 628 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7481 1;
 #X obj 662 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7580 1;
 #X obj 702 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7765 1;
 #X symbolatom 457 206 10 0 0 0 - - -;
 #X symbolatom 526 206 10 0 0 0 - - -;
 #X symbolatom 597 206 10 0 0 0 - - -;
@@ -63,13 +63,13 @@
 #X obj 364 290 clip 0.2 0.7;
 #X floatatom 364 311 5 0 0 0 - - -;
 #X obj 355 389 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 8890 1;
 #X obj 279 236 clip -50 50;
 #X obj 278 257 + 50;
 #X obj 278 278 / 100;
 #X floatatom 278 299 5 0 0 0 - - -;
 #X obj 292 388 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 900 1;
 #X obj 278 319 - 1;
 #X obj 278 340 * -1;
 #X connect 0 0 1 0;

@@ -89,7 +89,7 @@ controller.loop(function (frame) {
       msg.append('pinky')
       msg.append(bends[4].angle)
 
-      const client = new Client('localhost', 3000)
+      const client = new Client('localhost', 3030)
       client.send(msg, (err) => {
         if (err) {
           console.log(err)
@@ -109,6 +109,8 @@ controller.loop(function (frame) {
       msg2.append('s7_roll')
       msg2.append(roll)
 
+      const palmPos = frame.hands[0].palmPosition
+
       // added
       msg2.append('s8_')
       msg2.append(0)
@@ -117,7 +119,7 @@ controller.loop(function (frame) {
       msg2.append('s10_')
       msg2.append(palmPos[0])
 
-      const client2 = new Client('localhost', 3000)
+      const client2 = new Client('localhost', 3030)
       client2.send(msg2, (err) => {
         if (err) {
           console.log(err)
