@@ -32,6 +32,10 @@ function processAngle(clip, mix, angle) {
 
 }
 
+const fs = require('fs')
+const content = fs.readFileSync("options.json")
+const jsonContent = JSON.parse(content)
+
 const CustomFingers = function (data) {
   this.fingers = data
   this.bends = [0,0,0,0,0]
@@ -39,23 +43,25 @@ const CustomFingers = function (data) {
 
 CustomFingers.prototype.getBends = function () {
   // clip and mix for each joints in fingers
-  
-  const options = {
-    clip: {
-      0: [0.25, 0.28, 0.3],
-      1: [0.7, 0.6, 0.5],
-      2: [0.7, 0.6, 0.5],
-      3: [0.7, 0.6, 0.5],
-      4: [0.7, 0.6, 0.5]
-    },
-    mix: {
-      0: [0.3, 0, 0.7],
-      1: [0.6, 0.3, 0.1],
-      2: [0.6, 0.3, 0.1],
-      3: [0.6, 0.3, 0.1],
-      4: [0.6, 0.3, 0.1]
-    }
-  }
+  // const options = {
+  //   clip: {
+  //     0: [0.25, 0.28, 0.3],
+  //     1: [0.7, 0.6, 0.5],
+  //     2: [0.7, 0.6, 0.5],
+  //     3: [0.7, 0.6, 0.5],
+  //     4: [0.7, 0.6, 0.5]
+  //   },
+  //   mix: {
+  //     0: [0.3, 0, 0.7],
+  //     1: [0.6, 0.3, 0.1],
+  //     2: [0.6, 0.3, 0.1],
+  //     3: [0.6, 0.3, 0.1],
+  //     4: [0.6, 0.3, 0.1]
+  //   }
+  // }
+
+  // get options from options.json
+  const options = jsonContent
 
   this.bends = this.bends.map((value, index) => {
     const metArr = this.fingers[index].metacarpal.direction()
