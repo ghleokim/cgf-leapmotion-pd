@@ -77,7 +77,7 @@ controller.loop(function (frame) {
       // console.log(a.getBends())
       const bends = a.getBends()
 
-      const msg = new Message('/fingers')
+      const msg = new Message('/fingers/raw')
       msg.append('thumb')
       msg.append(bends[0].angle)
       msg.append('index')
@@ -108,6 +108,14 @@ controller.loop(function (frame) {
       msg2.append(wrist)
       msg2.append('s7_roll')
       msg2.append(roll)
+
+      // added
+      msg2.append('s8_')
+      msg2.append(0)
+      msg2.append('s9_')
+      msg2.append(palmPos[2])
+      msg2.append('s10_')
+      msg2.append(palmPos[0])
 
       const client2 = new Client('localhost', 3000)
       client2.send(msg2, (err) => {
