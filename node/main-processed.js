@@ -21,6 +21,17 @@ function angle(a, b) {
   return (multiply(a, b) / (normalizedA * normalizedB))
 }
 
+function processAngle(clip, mix, angle) {
+  
+  angle = angle.map((value, index) => {
+    return Math.min(clip[index], value) / clip[index]
+  })
+  return angle[0] * mix[0] + angle[1] * mix[1] + angle[2] * mix[2]
+
+  // return Math.min(clip[0], angle[0]) * mix[0] + Math.min(clip[1], angle[1]) * mix[1] + Math.min(clip[2], angle[2]) * mix[2]
+
+}
+
 const CustomFingers = function (data) {
   this.fingers = data
   this.bends = [0,0,0,0,0]
@@ -28,11 +39,20 @@ const CustomFingers = function (data) {
 
 CustomFingers.prototype.getBends = function () {
   const options = {
-    0: [1, 1],
-    1: [1, 1],
-    2: [1, 1],
-    3: [1, 1],
-    4: [1, 1]
+    clip: {
+      0: [0.25, 0.28, 0.3],
+      1: [0.7, 0.6, 0.5],
+      2: [0.7, 0.6, 0.5],
+      3: [0.7, 0.6, 0.5],
+      4: [0.7, 0.6, 0.5]
+    },
+    mix: {
+      0: [0.3, 0, 0.7],
+      1: [0.6, 0.3, 0.1],
+      2: [0.6, 0.3, 0.1],
+      3: [0.6, 0.3, 0.1],
+      4: [0.6, 0.3, 0.1]
+    }
   }
 
   this.bends = this.bends.map((value, index) => {
@@ -46,10 +66,14 @@ CustomFingers.prototype.getBends = function () {
       proximal: proxArr,
       medial: medArr,
       distal: disArr,
-      angle: [1 - angle(metArr, proxArr), 1 - angle(proxArr, medArr), 1 - angle(medArr, disArr)]
+      angle: [1 - angle(metArr, proxArr), 1 - angle(proxArr, medArr), 1 - angle(medArr, disArr)],
+      processed: processAngle(
+        options.clip[index], options.mix[index], 
+        [1 - angle(metArr, proxArr), 1 - angle(proxArr, medArr), 1 - angle(medArr, disArr)]
+        )
     }
 
-    return  bendItem
+    return bendItem
   })
 
   return this.bends
@@ -68,17 +92,17 @@ controller.loop(function (frame) {
       // console.log(a.getBends())
       const bends = a.getBends()
 
-      const msg = new Message('/fingers')
+      const msg = new Message('/fingers/processed')
       msg.append('thumb')
-      msg.append(bends[0].angle)
+      msg.append(bends[0].processed)
       msg.append('index')
-      msg.append(bends[1].angle)
+      msg.append(bends[1].processed)
       msg.append('middle')
-      msg.append(bends[2].angle)
+      msg.append(bends[2].processed)
       msg.append('ring')
-      msg.append(bends[3].angle)
+      msg.append(bends[3].processed)
       msg.append('pinky')
-      msg.append(bends[4].angle)
+      msg.append(bends[4].processed)
 
       const client = new Client('localhost', 3000)
       client.send(msg, (err) => {

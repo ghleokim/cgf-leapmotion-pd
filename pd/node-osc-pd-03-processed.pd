@@ -1,0 +1,70 @@
+#N canvas 242 58 1336 913 10;
+#X obj 37 37 udpreceive 3000;
+#X obj 37 58 unpackOSC;
+#X floatatom 90 88 5 0 0 0 - - -;
+#X symbolatom 65 185 10 0 0 0 - - -;
+#X floatatom 131 185 5 0 0 0 - - -;
+#X text 317 31 get range for each joint;
+#X text 350 52 thumb 0.75 0.72 0.3;
+#X text 286 73 index and others 0.2 0.1 0.4;
+#X obj 68 113 routeOSC /hand;
+#X obj 127 222 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 68 143 unpack s f s f, f 28;
+#X symbolatom 168 186 10 0 0 0 - - -;
+#X floatatom 234 184 5 0 0 0 - - -;
+#X obj 230 226 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 113 404 s 2-wrist;
+#X obj 235 409 s 2-wrist-roll;
+#X obj 454 113 routeOSC /fingers/processed;
+#X obj 454 164 unpack s f s f s f s f s f, f 52;
+#X obj 470 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 541 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 608 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 642 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 682 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X symbolatom 437 206 10 0 0 0 - - -;
+#X symbolatom 506 206 10 0 0 0 - - -;
+#X symbolatom 577 206 10 0 0 0 - - -;
+#X symbolatom 661 209 10 0 0 0 - - -;
+#X symbolatom 737 206 10 0 0 0 - - -;
+#X floatatom 470 408 5 0 0 0 - - -;
+#X floatatom 541 408 5 0 0 0 - - -;
+#X floatatom 608 408 5 0 0 0 - - -;
+#X floatatom 642 408 5 0 0 0 - - -;
+#X floatatom 682 408 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 1 0 16 0;
+#X connect 1 1 2 0;
+#X connect 4 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 14 0;
+#X connect 10 0 3 0;
+#X connect 10 1 4 0;
+#X connect 10 2 11 0;
+#X connect 10 3 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 16 0 17 0;
+#X connect 17 0 23 0;
+#X connect 17 1 18 0;
+#X connect 17 2 24 0;
+#X connect 17 3 19 0;
+#X connect 17 4 25 0;
+#X connect 17 5 20 0;
+#X connect 17 6 26 0;
+#X connect 17 7 21 0;
+#X connect 17 8 27 0;
+#X connect 17 9 22 0;
+#X connect 18 0 28 0;
+#X connect 19 0 29 0;
+#X connect 20 0 30 0;
+#X connect 21 0 31 0;
+#X connect 22 0 32 0;
