@@ -1,0 +1,19 @@
+{
+    "name": "cgf-leapmotion-pd",
+    "main": "jsproj-nodeosc.js",
+    "version": "0.1.0",
+    "dependencies": {
+        "leapjs": "^0.6.4",
+        "node-osc": "4.1.4"
+    },
+    "license": "MIT",
+    "author": {
+        "name" : "Leo Kim",
+        "email" : "gh.leokim@gmail.com",
+        "url" : "https://github.com/ghleokim"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ghleokim/cgf-leapmotion-pd.git"
+    }
+}

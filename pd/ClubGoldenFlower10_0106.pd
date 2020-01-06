@@ -1,0 +1,877 @@
+#N canvas 610 31 1057 856 10;
+#X text 281 133 Dro-Guard;
+#X text 560 135 Ims-the Imitater;
+#X text 716 134 Jon-Watchdog;
+#X text 418 134 Dru-Drinker;
+#X text 867 135 Pilib-Dancer;
+#X text 1022 135 Nael-Mirror;
+#N canvas 535 218 763 425 ClubGoldenFlower_time 0;
+#X obj 104 154 metro 1000;
+#X obj 104 183 cup;
+#X floatatom 104 207 5 0 0 0 - - -, f 5;
+#X obj 104 135 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 136 173 0;
+#X obj 104 295 bng 15 250 50 0 0sec empty 0sec 17 7 0 10 -262144 -1
+-1;
+#X obj 151 294 bng 15 250 50 0 60sec empty 60sec 17 7 0 10 -262144
+-1 -1;
+#X obj 104 65 inlet;
+#X obj 104 87 t b b;
+#X msg 104 114 1;
+#X msg 156 113 0;
+#X text 143 206 sec;
+#X obj 45 294 outlet;
+#X obj 207 296 bng 15 250 50 0 90sec empty 90sec 17 7 0 10 -262144
+-1 -1;
+#X obj 326 298 bng 15 250 50 0 180sec empty 180sec 17 7 0 10 -262144
+-1 -1;
+#X obj 265 296 bng 15 250 50 0 120sec empty 120sec 17 7 0 10 -262144
+-1 -1;
+#X obj 387 296 bng 15 250 50 0 300sec empty 300sec 17 7 0 10 -262144
+-1 -1;
+#X obj 451 296 bng 15 250 50 0 315sec empty 315sec 17 7 0 10 -262144
+-1 -1;
+#X text 448 319 lalala start;
+#X obj 547 295 bng 15 250 50 0 582sec empty 582sec 17 7 0 10 -262144
+-1 -1;
+#X text 548 320 end;
+#X obj 633 298 bng 15 250 50 0 612sec empty 612sec 17 7 0 10 -262144
+-1 -1;
+#X obj 104 227 sel 0 60 90 120 180 300 315 582 612, f 55;
+#X text 564 342 30sec sleep;
+#X obj 343 364 s light_goldenFlowerMusic;
+#X obj 106 366 s light_afterSchoolPlaying;
+#X obj 373 343 delay 150;
+#X obj 208 69 inlet;
+#X obj 182 205 sel 50;
+#X msg 205 171 300;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 28 0;
+#X connect 2 0 12 0;
+#X connect 2 0 22 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 25 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 4 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 0;
+#X connect 16 0 26 0;
+#X connect 22 0 5 0;
+#X connect 22 1 6 0;
+#X connect 22 2 13 0;
+#X connect 22 3 15 0;
+#X connect 22 4 14 0;
+#X connect 22 5 16 0;
+#X connect 22 6 17 0;
+#X connect 22 7 19 0;
+#X connect 22 8 21 0;
+#X connect 26 0 24 0;
+#X connect 27 0 10 0;
+#X connect 29 0 1 0;
+#X restore 47 91 pd ClubGoldenFlower_time;
+#X obj 260 15 bng 15 250 50 0 Stop_Playing_Global empty Stop_Playing_Global
+17 7 0 10 -258113 -1 -1;
+#X obj 47 71 bng 15 250 50 0 empty empty start 17 7 0 10 -4034 -1 -1
+;
+#X obj 39 302 bng 15 250 50 0 empty 60sec 60sec 17 7 0 10 -262144 -1
+-1;
+#X obj 35 449 bng 15 250 50 0 empty 315sec 315sec 17 7 0 10 -262144
+-1 -1;
+#X obj 39 377 bng 15 250 50 0 usual_start empty usual_start 17 7 0
+10 -262144 -1 -1;
+#X floatatom 47 114 5 0 0 1 sec. - -, f 5;
+#N canvas 0 23 1440 855 control_message 0;
+#X obj 44 415 spigot;
+#X obj 83 391 tgl 15 0 empty mc1 1 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 181 416 spigot;
+#X obj 220 392 tgl 15 0 empty mc2 2 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 313 416 spigot;
+#X obj 352 392 tgl 15 0 empty mc3 3 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 450 417 spigot;
+#X obj 489 393 tgl 15 0 empty mc4 4 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 589 417 spigot;
+#X obj 628 393 tgl 15 0 empty mc5 5 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 725 416 spigot;
+#X obj 764 392 tgl 15 0 empty mc6 6 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 43 517 spigot;
+#X obj 82 493 tgl 15 0 empty mc7 7 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 180 517 spigot;
+#X obj 219 493 tgl 15 0 empty mc8 8 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 315 515 spigot;
+#X obj 354 491 tgl 15 0 empty mc9 9 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 447 515 spigot;
+#X obj 486 491 tgl 15 0 empty mc10 10 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 589 514 spigot;
+#X obj 628 490 tgl 15 0 empty mc11 11 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 729 514 spigot;
+#X obj 768 490 tgl 15 0 empty mc12 12 17 7 0 10 -262144 -1 -1 0 1;
+#X text 1165 71 all on;
+#X msg 1165 93 \; mc1 1 \; mc2 1 \; mc3 1 \; mc4 1 \; mc5 1 \; mc6
+1 \; mc7 1 \; mc8 1 \; mc9 1 \; mc10 1 \; mc11 1 \; mc12 1;
+#X msg 133 86 \; mc1 0 \; mc2 0 \; mc3 0 \; mc4 0 \; mc5 0 \; mc6 0
+\; mc7 0 \; mc8 0 \; mc9 0 \; mc10 0 \; mc11 0 \; mc12 0;
+#X text 130 64 all off;
+#X text 250 130 adult default position;
+#X text 226 201 adult sleep position;
+#X obj 1020 376 r adult_data;
+#X obj 1201 376 r kid_data;
+#X text 271 54 arduino start;
+#X text 704 127 kid default position;
+#X text 704 198 kid sleep position;
+#X msg 273 71 \; adult_data 255 1;
+#X text 848 389 1 spigot On;
+#X obj 233 12 inlet;
+#X obj 233 35 t b b b b;
+#X text 848 50 arduino start;
+#X msg 850 67 \; adult_data 255 1;
+#X obj 810 8 inlet;
+#X obj 810 31 t b b b b;
+#X obj 1201 399 s GF1_7_data;
+#X obj 1201 424 s GF1_8_data;
+#X obj 1201 449 s GF1_9_data;
+#X obj 1201 474 s GF1_10_data;
+#X obj 1201 499 s GF1_11_data;
+#X obj 1201 524 s GF1_12_data;
+#X obj 1020 399 s GF1_1_data;
+#X obj 1020 424 s GF1_2_data;
+#X obj 1020 449 s GF1_3_data;
+#X obj 1020 474 s GF1_4_data;
+#X obj 1020 499 s GF1_5_data;
+#X obj 1020 524 s GF1_6_data;
+#X obj 43 442 s GF1_1_message;
+#X obj 181 443 s GF1_2_message;
+#X obj 313 442 s GF1_3_message;
+#X obj 589 443 s GF1_5_message;
+#X obj 725 442 s GF1_6_message;
+#X obj 45 367 r GF1_1_data;
+#X obj 182 368 r GF1_2_data;
+#X obj 314 368 r GF1_3_data;
+#X obj 451 369 r GF1_4_data;
+#X obj 590 369 r GF1_5_data;
+#X obj 726 368 r GF1_6_data;
+#X obj 44 469 r GF1_7_data;
+#X obj 43 541 s GF1_7_message;
+#X obj 181 469 r GF1_8_data;
+#X obj 180 540 s GF1_8_message;
+#X obj 448 467 r GF1__data;
+#X obj 316 467 r GF1_9_data;
+#X obj 315 539 s GF1_9_message;
+#X obj 448 538 s GF1_10_message;
+#X obj 590 466 r GF1_11_data;
+#X obj 589 537 s GF1_11_message;
+#X obj 730 466 r GF1_12_data;
+#X obj 729 536 s GF1_12_message;
+#X obj 22 24 loadbang;
+#X msg 22 50 \; loop 1;
+#X msg 251 148 \; adult_data 255 0 0 8 0 1 1 16 186 1 42 1 114 1 90
+1 140 1 155 1 125 0 186 1 215 1 104 1 141 1 112 1 124 0 0 8 7 0 0;
+#X msg 228 221 \; adult_data 255 0 0 8 0 1 1 16 186 1 42 1 114 1 90
+1 140 1 155 1 125 0 186 1 222 1 104 1 141 1 151 0 212 0 0 0 0 0 0;
+#X msg 705 146 \; kid_data 255 0 0 8 100 1 1 19 225 1 61 0 0 0 0 0
+0 0 0 1 55 1 95 1 22 1 105 1 120 1 120 1 120 0 0 0 0 0 0;
+#X msg 706 218 \; kid_data 255 0 0 8 100 1 1 19 225 1 61 0 0 0 0 0
+0 0 0 1 55 1 95 1 22 1 105 1 120 1 120 1 120 0 0 0 0 0 0;
+#X obj 450 443 s GF1_4_message;
+#X connect 0 0 55 0;
+#X connect 1 0 0 1;
+#X connect 2 0 56 0;
+#X connect 3 0 2 1;
+#X connect 4 0 57 0;
+#X connect 5 0 4 1;
+#X connect 6 0 84 0;
+#X connect 7 0 6 1;
+#X connect 8 0 58 0;
+#X connect 9 0 8 1;
+#X connect 10 0 59 0;
+#X connect 11 0 10 1;
+#X connect 12 0 67 0;
+#X connect 13 0 12 1;
+#X connect 14 0 69 0;
+#X connect 15 0 14 1;
+#X connect 16 0 72 0;
+#X connect 17 0 16 1;
+#X connect 18 0 73 0;
+#X connect 19 0 18 1;
+#X connect 20 0 75 0;
+#X connect 21 0 20 1;
+#X connect 22 0 77 0;
+#X connect 23 0 22 1;
+#X connect 30 0 49 0;
+#X connect 30 0 50 0;
+#X connect 30 0 51 0;
+#X connect 30 0 52 0;
+#X connect 30 0 53 0;
+#X connect 30 0 54 0;
+#X connect 31 0 43 0;
+#X connect 31 0 44 0;
+#X connect 31 0 45 0;
+#X connect 31 0 46 0;
+#X connect 31 0 47 0;
+#X connect 31 0 48 0;
+#X connect 37 0 38 0;
+#X connect 38 0 26 0;
+#X connect 38 1 80 0;
+#X connect 38 1 82 0;
+#X connect 38 2 35 0;
+#X connect 38 3 25 0;
+#X connect 41 0 42 0;
+#X connect 42 0 26 0;
+#X connect 42 1 83 0;
+#X connect 42 1 81 0;
+#X connect 42 2 40 0;
+#X connect 42 3 25 0;
+#X connect 60 0 0 0;
+#X connect 61 0 2 0;
+#X connect 62 0 4 0;
+#X connect 63 0 6 0;
+#X connect 64 0 8 0;
+#X connect 65 0 10 0;
+#X connect 66 0 12 0;
+#X connect 68 0 14 0;
+#X connect 70 0 18 0;
+#X connect 71 0 16 0;
+#X connect 74 0 20 0;
+#X connect 76 0 22 0;
+#X connect 78 0 79 0;
+#X restore 260 78 pd control_message;
+#X obj 260 34 bng 15 250 50 0 empty empty default_position_all 17 7
+0 10 -257985 -1 -1;
+#X obj 260 53 bng 15 250 50 0 empty sleep_postion_all sleep_postion_all
+17 7 0 10 -16662 -1 -1;
+#X obj 85 346 bng 15 250 50 0 Stop_Playing_Global empty Stop_Playing_Global
+17 7 0 10 -258113 -1 -1;
+#X obj 81 491 bng 15 250 50 0 Stop_Playing_Global empty Stop_Playing_Global
+17 7 0 10 -258113 -1 -1;
+#X obj 58 508 bng 15 250 50 0 UDP_connect_all empty UDP_connect_all_s
+17 7 0 10 -159808 -1 -1;
+#X obj 62 363 bng 15 250 50 0 UDP_connect_all empty UDP_connect_all_s
+17 7 0 10 -159808 -1 -1;
+#X obj 35 527 bng 15 250 50 0 lalala_start empty lalala_start_s 17
+7 0 10 -262144 -1 -1;
+#N canvas 73 144 1127 468 UDP 0;
+#N canvas 10 73 1430 691 UDP 0;
+#X obj 7 192 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 225 189 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 298 212 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 454 188 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 528 209 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 672 185 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 746 205 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 902 184 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 977 202 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 1120 181 bng 15 250 50 0 empty empty getting_data 17 7 0 10
+-262144 -1 -1;
+#X obj 1196 198 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 14 434 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 88 447 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 232 431 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 306 447 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 461 430 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 536 443 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 679 427 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 753 444 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 909 426 bng 15 250 50 0 empty empty getting_data 17 7 0 10 -262144
+-1 -1;
+#X obj 982 442 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 1127 423 bng 15 250 50 0 empty empty getting_data 17 7 0 10
+-262144 -1 -1;
+#X obj 1201 440 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 80 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 80 230 s udp_con1;
+#X obj 298 231 s udp_con2;
+#X obj 528 227 s udp_con3;
+#X obj 747 227 s udp_con4;
+#X obj 977 221 s udp_con5;
+#X obj 1196 217 s udp_con6;
+#X obj 88 468 s udp_con7;
+#X obj 306 468 s udp_con8;
+#X obj 536 466 s udp_con9;
+#X obj 753 466 s udp_con10;
+#X obj 982 464 s udp_con11;
+#X obj 1201 463 s udp_con12;
+#X obj 105 575 r udp_con1;
+#X obj 192 574 r udp_con2;
+#X obj 276 574 r udp_con3;
+#X obj 360 575 r udp_con4;
+#X obj 443 576 r udp_con5;
+#X obj 526 575 r udp_con6;
+#X obj 605 576 r udp_con7;
+#X obj 689 575 r udp_con8;
+#X obj 770 574 r udp_con9;
+#X obj 850 575 r udp_con10;
+#X obj 938 574 r udp_con11;
+#X obj 1025 573 r udp_con12;
+#X obj 105 599 outlet;
+#X obj 192 598 outlet;
+#X obj 273 599 outlet;
+#X obj 360 598 outlet;
+#X obj 443 598 outlet;
+#X obj 530 597 outlet;
+#X obj 611 598 outlet;
+#X obj 698 597 outlet;
+#X obj 770 598 outlet;
+#X obj 857 597 outlet;
+#X obj 938 598 outlet;
+#X obj 1025 597 outlet;
+#X obj 81 149 r udp_c1;
+#X obj 299 145 r udp_c2;
+#X obj 528 142 r udp_c3;
+#X obj 746 142 r udp_c4;
+#X obj 976 138 r udp_c5;
+#X obj 88 385 r udp_c7;
+#X obj 306 386 r udp_c8;
+#X obj 535 383 r udp_c9;
+#X obj 753 383 r udp_c10;
+#X obj 982 381 r udp_c11;
+#X obj 1201 379 r udp_c12;
+#X obj 1194 139 r udp_c6;
+#X obj 7 171 UDP_control;
+#X obj 225 168 UDP_control;
+#X obj 454 167 UDP_control;
+#X obj 672 164 UDP_control;
+#X obj 902 163 UDP_control;
+#X obj 1120 160 UDP_control;
+#X obj 14 413 UDP_control;
+#X obj 232 410 UDP_control;
+#X obj 461 409 UDP_control;
+#X obj 679 406 UDP_control;
+#X obj 908 405 UDP_control;
+#X obj 1127 402 UDP_control;
+#X obj 7 120 r GF1_1_control_data;
+#X obj 226 120 r GF1_2_control_data;
+#X obj 456 120 r GF1_3_control_data;
+#X obj 674 120 r GF1_4_control_data;
+#X obj 902 120 r GF1_5_control_data;
+#X obj 1120 120 r GF1_6_control_data;
+#X obj 15 361 r GF1_7_control_data;
+#X obj 233 361 r GF1_8_control_data;
+#X obj 475 361 r GF1_9_control_data;
+#X obj 681 361 r GF1_10_control_data;
+#X obj 909 361 r GF1_11_control_data;
+#X obj 1127 361 r GF1_12_control_data;
+#X obj 8 97 r GF1_1_message;
+#X obj 226 96 r GF1_2_message;
+#X obj 455 98 r GF1_3_message;
+#X obj 673 97 r GF1_4_message;
+#X obj 902 98 r GF1_5_message;
+#X obj 1120 97 r GF1_6_message;
+#X obj 15 334 r GF1_7_message;
+#X obj 233 333 r GF1_8_message;
+#X obj 463 335 r GF1_9_message;
+#X obj 681 333 r GF1_10_message;
+#X obj 910 334 r GF1_11_message;
+#X obj 1128 334 r GF1_12_message, f 17;
+#X connect 2 0 25 0;
+#X connect 4 0 26 0;
+#X connect 6 0 27 0;
+#X connect 8 0 28 0;
+#X connect 10 0 29 0;
+#X connect 12 0 30 0;
+#X connect 14 0 31 0;
+#X connect 16 0 32 0;
+#X connect 18 0 33 0;
+#X connect 20 0 34 0;
+#X connect 22 0 35 0;
+#X connect 23 0 24 0;
+#X connect 36 0 48 0;
+#X connect 37 0 49 0;
+#X connect 38 0 50 0;
+#X connect 39 0 51 0;
+#X connect 40 0 52 0;
+#X connect 41 0 53 0;
+#X connect 42 0 54 0;
+#X connect 43 0 55 0;
+#X connect 44 0 56 0;
+#X connect 45 0 57 0;
+#X connect 46 0 58 0;
+#X connect 47 0 59 0;
+#X connect 60 0 72 1;
+#X connect 61 0 73 1;
+#X connect 62 0 74 1;
+#X connect 63 0 75 1;
+#X connect 64 0 76 1;
+#X connect 65 0 78 1;
+#X connect 66 0 79 1;
+#X connect 67 0 80 1;
+#X connect 68 0 81 1;
+#X connect 69 0 82 1;
+#X connect 70 0 83 1;
+#X connect 71 0 77 1;
+#X connect 72 0 0 0;
+#X connect 72 1 23 0;
+#X connect 73 0 1 0;
+#X connect 73 1 2 0;
+#X connect 74 0 3 0;
+#X connect 74 1 4 0;
+#X connect 75 0 5 0;
+#X connect 75 1 6 0;
+#X connect 76 0 7 0;
+#X connect 76 1 8 0;
+#X connect 77 0 9 0;
+#X connect 77 1 10 0;
+#X connect 78 0 11 0;
+#X connect 78 1 12 0;
+#X connect 79 0 13 0;
+#X connect 79 1 14 0;
+#X connect 80 0 15 0;
+#X connect 80 1 16 0;
+#X connect 81 0 17 0;
+#X connect 81 1 18 0;
+#X connect 82 0 19 0;
+#X connect 82 1 20 0;
+#X connect 83 0 21 0;
+#X connect 83 1 22 0;
+#X connect 84 0 72 0;
+#X connect 85 0 73 0;
+#X connect 86 0 74 0;
+#X connect 87 0 75 0;
+#X connect 88 0 76 0;
+#X connect 89 0 77 0;
+#X connect 90 0 78 0;
+#X connect 91 0 79 0;
+#X connect 92 0 80 0;
+#X connect 93 0 81 0;
+#X connect 94 0 82 0;
+#X connect 95 0 83 0;
+#X connect 96 0 72 0;
+#X connect 97 0 73 0;
+#X connect 98 0 74 0;
+#X connect 99 0 75 0;
+#X connect 100 0 76 0;
+#X connect 101 0 77 0;
+#X connect 102 0 78 0;
+#X connect 103 0 79 0;
+#X connect 104 0 80 0;
+#X connect 105 0 81 0;
+#X connect 106 0 82 0;
+#X connect 107 0 83 0;
+#X restore 805 124 pd UDP;
+#X obj 171 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 222 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 274 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 326 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 378 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 430 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 482 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 534 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 586 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 638 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 690 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 742 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 222 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 274 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 326 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 378 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 430 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 482 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 534 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 586 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 638 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 690 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 742 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 36 23 1404 638 UDP_connect 0;
+#X obj 28 13 inlet;
+#X obj 112 11 inlet;
+#X obj 193 12 inlet;
+#X obj 280 11 inlet;
+#X obj 363 11 inlet;
+#X obj 448 10 inlet;
+#X obj 531 11 inlet;
+#X obj 618 10 inlet;
+#X obj 690 11 inlet;
+#X obj 777 10 inlet;
+#X obj 858 11 inlet;
+#X obj 945 10 inlet;
+#X msg 28 37 \; udp_c1 connect 192.168.0.101 3001;
+#X msg 110 79 \; udp_c2 connect 192.168.0.102 3001;
+#X msg 196 131 \; udp_c3 connect 192.168.0.103 3001;
+#X msg 278 173 \; udp_c4 connect 192.168.0.104 3001;
+#X msg 368 229 \; udp_c5 connect 192.168.0.105 3001;
+#X msg 450 271 \; udp_c6 connect 192.168.0.106 3001;
+#X msg 536 323 \; udp_c7 connect 192.168.0.107 3001;
+#X msg 618 365 \; udp_c8 connect 192.168.0.108 3001;
+#X msg 700 414 \; udp_c9 connect 192.168.0.109 3001;
+#X msg 782 456 \; udp_c10 connect 192.168.0.110 3001;
+#X msg 868 508 \; udp_c11 connect 192.168.0.111 3001;
+#X msg 950 550 \; udp_c12 connect 192.168.0.112 3001, f 82;
+#X connect 0 0 12 0;
+#X connect 1 0 13 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 16 0;
+#X connect 5 0 17 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 20 0;
+#X connect 9 0 21 0;
+#X connect 10 0 22 0;
+#X connect 11 0 23 0;
+#X restore 857 136 pd UDP_connect;
+#X obj 171 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 222 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 274 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 326 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 378 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 430 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 482 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 534 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 586 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 638 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 690 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 742 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 36 23 1404 638 UDP_disconnect 0;
+#X obj 28 13 inlet;
+#X obj 112 11 inlet;
+#X obj 193 12 inlet;
+#X obj 280 11 inlet;
+#X obj 363 11 inlet;
+#X obj 448 10 inlet;
+#X obj 531 11 inlet;
+#X obj 618 10 inlet;
+#X obj 690 11 inlet;
+#X obj 777 10 inlet;
+#X obj 858 11 inlet;
+#X obj 945 10 inlet;
+#X msg 28 37 \; udp_c1 disconnect;
+#X msg 110 79 \; udp_c2 disconnect;
+#X msg 196 131 \; udp_c3 disconnect;
+#X msg 278 173 \; udp_c4 disconnect;
+#X msg 368 229 \; udp_c5 disconnect;
+#X msg 450 271 \; udp_c6 disconnect;
+#X msg 536 323 \; udp_c7 disconnect;
+#X msg 618 365 \; udp_c8 disconnect;
+#X msg 700 414 \; udp_c9 disconnect;
+#X msg 782 456 \; udp_c10 disconnect;
+#X msg 868 508 \; udp_c11 disconnect;
+#X msg 950 550 \; udp_c12 disconnect;
+#X connect 0 0 12 0;
+#X connect 1 0 13 0;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 16 0;
+#X connect 5 0 17 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 20 0;
+#X connect 9 0 21 0;
+#X connect 10 0 22 0;
+#X connect 11 0 23 0;
+#X restore 857 176 pd UDP_disconnect;
+#X text 103 141 status;
+#N canvas 482 71 680 490 UDP_Global 0;
+#X msg 55 95 \; udp_c1 connect 192.168.0.101 3001 \; udp_c2 connect
+192.168.0.102 3001 \; udp_c3 connect 192.168.0.103 3001 \; udp_c4 connect
+192.168.0.104 3001 \; udp_c5 connect 192.168.0.105 3001 \; udp_c6 connect
+192.168.0.106 3001 \; udp_c7 connect 192.168.0.107 3001 \; udp_c8 connect
+192.168.0.108 3001 \; udp_c9 connect 192.168.0.109 3001 \; udp_c10
+connect 192.168.0.110 3001 \; udp_c11 connect 192.168.0.111 3001 \;
+udp_c12 connect 192.168.0.112 3001;
+#X msg 338 95 \; udp_c1 disconnect \; udp_c2 disconnect \; udp_c3 disconnect
+\; udp_c4 disconnect \; udp_c5 disconnect \; udp_c6 disconnect \; udp_c7
+disconnect \; udp_c8 disconnect \; udp_c9 disconnect \; udp_c10 disconnect
+\; udp_c11 disconnect \; udp_c12 disconnect;
+#X obj 55 70 inlet;
+#X obj 338 72 inlet;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X restore 30 192 pd UDP_Global;
+#X obj 30 121 bng 15 250 50 0 empty UDP_connect_all UDP_connect_all_r
+17 7 0 10 -159808 -1 -1;
+#X obj 30 162 bng 15 250 50 0 empty empty UDP_disconnect_all 17 7 0
+10 -262144 -1 -1;
+#X text 169 102 Dro;
+#X text 220 102 Dru;
+#X text 271 102 Ims;
+#X text 324 102 Jon;
+#X text 369 102 Pilib;
+#X text 424 102 Nael;
+#X text 479 102 Mas;
+#X text 529 102 Sew;
+#X text 579 102 Gobo;
+#X text 636 102 Us;
+#X text 682 102 Imon;
+#X text 740 102 Ot;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 0 3 4 0;
+#X connect 0 4 5 0;
+#X connect 0 5 6 0;
+#X connect 0 6 7 0;
+#X connect 0 7 8 0;
+#X connect 0 8 9 0;
+#X connect 0 9 10 0;
+#X connect 0 10 11 0;
+#X connect 0 11 12 0;
+#X connect 13 0 25 0;
+#X connect 14 0 25 1;
+#X connect 15 0 25 2;
+#X connect 16 0 25 3;
+#X connect 17 0 25 4;
+#X connect 18 0 25 5;
+#X connect 19 0 25 6;
+#X connect 20 0 25 7;
+#X connect 21 0 25 8;
+#X connect 22 0 25 9;
+#X connect 23 0 25 10;
+#X connect 24 0 25 11;
+#X connect 26 0 38 0;
+#X connect 27 0 38 1;
+#X connect 28 0 38 2;
+#X connect 29 0 38 3;
+#X connect 30 0 38 4;
+#X connect 31 0 38 5;
+#X connect 32 0 38 6;
+#X connect 33 0 38 7;
+#X connect 34 0 38 8;
+#X connect 35 0 38 9;
+#X connect 36 0 38 10;
+#X connect 37 0 38 11;
+#X connect 41 0 40 0;
+#X connect 42 0 40 1;
+#X coords 0 -1 1 1 750 80 1 20 100;
+#X restore 617 13 pd UDP;
+#N canvas 345 72 450 300 OSC 0;
+#X obj 29 96 toggleosc;
+#X obj 88 116 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+;
+#X obj 69 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 49 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 44 45 bng 15 250 50 0 empty empty test:after_school_playing
+17 7 0 10 -261234 -1 -1;
+#X obj 44 65 bng 15 250 50 0 empty empty test:_golden_flower_music
+17 7 0 10 -261234 -1 -1;
+#X text 44 24 Press QLC Play Button;
+#X text 24 24 4;
+#X text 23 45 5;
+#X text 24 65 6;
+#X obj 109 96 bng 15 250 50 0 empty empty connect_OSC 17 7 0 10 -262144
+-1 -1;
+#X obj 88 141 outlet;
+#X obj 230 16 inlet;
+#X connect 0 1 3 0;
+#X connect 0 2 2 0;
+#X connect 0 3 1 0;
+#X connect 1 0 11 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 1;
+#X connect 10 0 0 2;
+#X connect 12 0 10 0;
+#X restore 532 56 pd OSC;
+#X obj 39 324 t b b b;
+#X obj 35 471 t b b b;
+#X obj 41 245 bng 15 250 50 0 set_start_position empty set_start_position
+17 7 0 10 -262144 -1 -1;
+#X obj 87 214 bng 15 250 50 0 Stop_Playing_Global empty Stop_Playing_Global
+17 7 0 10 -258113 -1 -1;
+#X obj 64 231 bng 15 250 50 0 UDP_connect_all empty UDP_connect_all_s
+17 7 0 10 -159808 -1 -1;
+#X obj 41 192 t b b b;
+#X obj 409 264 bng 15 250 50 0 empty empty e-o-s 17 7 0 10 -262144
+-1 -1;
+#X obj 525 264 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 409 403 bng 15 250 50 0 empty empty e-o-s 17 7 0 10 -262144
+-1 -1;
+#X obj 525 402 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 409 309 bng 15 250 50 0 empty usual_start usual_start 17 7 0
+10 -262144 -1 -1;
+#X obj 409 170 bng 15 250 50 0 empty set_start_position set_start_position
+17 7 0 10 -262144 -1 -1;
+#X obj 2069 260 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 2069 398 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 1206 136 Mas - Beggar;
+#X text 1357 136 Sew - seller;
+#X text 1494 136 Gobo - projecter;
+#X text 1655 136 Us - cheater;
+#X text 1804 136 Imon - Priest;
+#X text 1957 136 Ot - trainee;
+#X obj 41 171 bng 15 250 50 0 empty 0sec 0sec 17 7 0 10 -262144 -1
+-1;
+#X obj 531 78 tgl 15 0 empty empty UDP_status 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 532 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 532 17 bng 15 250 50 0 empty 0sec 0sec 17 7 0 10 -262144 -1
+-1;
+#X obj 502 314 tgl 15 0 empty loop loop 17 7 0 10 -262144 -1 -1 1 1
+;
+#N canvas 65 56 715 689 timer 0;
+#X msg 325 182 bang;
+#X floatatom 340 269 0 0 0 0 - - -;
+#X floatatom 332 292 0 0 0 0 - - -;
+#X floatatom 231 228 0 0 0 0 - - -;
+#X obj 325 211 time;
+#X floatatom 350 246 0 0 0 0 - - -;
+#X text 407 249 msec;
+#X text 406 271 sec;
+#X text 407 292 min;
+#X text 406 314 hours;
+#X obj 332 315 / 15;
+#X obj 330 339 int;
+#X floatatom 332 362 5 0 0 0 - - -, f 5;
+#X obj 332 382 change;
+#X obj 332 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 324 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 332 101 1;
+#X obj 349 67 delay 3000;
+#X obj 322 156 metro 1000;
+#X obj 96 244 moses 10;
+#X obj 224 452 spigot;
+#X obj 263 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 217 408 0;
+#X msg 256 409 1;
+#X obj 149 268 moses 19;
+#X obj 96 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 149 291 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 202 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 449 51 play every 15min;
+#X obj 224 478 outlet;
+#X obj 231 289 sel 19;
+#X obj 231 311 s closing;
+#X obj 231 267 change;
+#X connect 0 0 4 0;
+#X connect 2 0 10 0;
+#X connect 3 0 19 0;
+#X connect 3 0 32 0;
+#X connect 4 0 3 0;
+#X connect 4 1 2 0;
+#X connect 4 2 1 0;
+#X connect 4 3 5 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 20 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 0 0;
+#X connect 19 0 25 0;
+#X connect 19 1 24 0;
+#X connect 20 0 29 0;
+#X connect 21 0 20 1;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 26 0;
+#X connect 24 1 27 0;
+#X connect 25 0 22 0;
+#X connect 26 0 23 0;
+#X connect 27 0 22 0;
+#X connect 30 0 31 0;
+#X connect 32 0 30 0;
+#X restore 46 25 pd timer;
+#X obj 212 74 bng 15 250 50 0 empty Stop_Playing_Global stop 17 7 0
+10 -262144 -1 -1;
+#X obj 163 11 r closing;
+#X obj 163 32 t b b b;
+#X obj 409 190 GF1 2 1 60000 100;
+#X obj 409 329 GF1 2 2 60000 100;
+#X obj 813 863 s GF1_12_control_data;
+#X obj 108 38 bng 15 250 50 0 empty 612sec 612sec 17 7 0 10 -262144
+-1 -1;
+#X connect 6 0 12 0;
+#X connect 8 0 6 0;
+#X connect 9 0 23 0;
+#X connect 10 0 24 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 1;
+#X connect 22 0 44 0;
+#X connect 23 0 11 0;
+#X connect 23 1 19 0;
+#X connect 23 2 16 0;
+#X connect 24 0 20 0;
+#X connect 24 1 18 0;
+#X connect 24 2 17 0;
+#X connect 28 0 25 0;
+#X connect 28 1 27 0;
+#X connect 28 2 26 0;
+#X connect 33 0 53 0;
+#X connect 34 0 52 0;
+#X connect 43 0 28 0;
+#X connect 45 0 22 0;
+#X connect 46 0 45 0;
+#X connect 47 0 53 1;
+#X connect 48 0 8 0;
+#X connect 50 0 51 0;
+#X connect 51 0 15 0;
+#X connect 51 1 7 0;
+#X connect 51 2 49 0;
+#X connect 52 0 29 0;
+#X connect 52 1 30 0;
+#X connect 53 0 31 0;
+#X connect 53 1 32 0;
+#X connect 55 0 15 0;
