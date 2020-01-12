@@ -137,7 +137,7 @@ controller.loop(function (frame) {
 
       // added
       msg2.append('s8_')
-      msg2.append(0)
+      msg2.append(palmPos[1])
       msg2.append('s9_')
       msg2.append(palmPos[2])
       msg2.append('s10_')
