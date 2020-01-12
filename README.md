@@ -1,5 +1,14 @@
 # cgf-leapmotion-pd
 
+## Added
+
+2020-01-12 추가
+v0.1.0 : 초기 버전
+- 링크 https://github.com/ghleokim/cgf-leapmotion-pd/tree/v0.1.0
+
+v0.1.1 : 높낮이 정보 추가
+- 링크 https://github.com/ghleokim/cgf-leapmotion-pd/tree/v0.1.1
+
 ## Environment
 
 MacOS 10.13.6
