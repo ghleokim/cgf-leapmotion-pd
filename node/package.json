@@ -1,10 +1,18 @@
 {
     "name": "cgf-leapmotion-pd",
-    "main": "main-processed.js",
-    "version": "0.1.0",
+    "description": "Connects Leap Motion controller to Club Golden Flower(2019)",
+    "main": "main.js",
+    "version": "0.1.1",
+    "type": "module",
+    "scripts": {
+        "start": "node main.js",
+        "processed-start": "node main-processed.js",
+        "debug": "NODE_ENV=development node main.js",
+        "processed-debug": "NODE_ENV=development node main-processed.js"
+    },
     "dependencies": {
         "leapjs": "^0.6.4",
-        "node-osc": "4.1.4",
+        "node-osc": "^5.1.0",
         "ws": "1.1.5"
     },
     "license": "MIT",
