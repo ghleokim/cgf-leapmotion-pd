@@ -1,24 +1,23 @@
-function multiply(a, b) {
-  return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const math = require('./math.js');
+const angle = math.angle;
+
+const Leap = require('leapjs');
+const { Client, Message } = require('node-osc');
+
+let timestamp = Date.now()
+
+function onConnect () {
+  console.log('Device Connected')
 }
 
-function angle(a, b) {
-  this.normalizedA = 0
-  this.normalizedB = 0
+function frameCheck (frame) {
+  if(frame.id % 10 === 0) {
+    curTime = Date.now();
+    timeDelta = curTime - timestamp;
+    timestamp = curTime;
 
-  a.forEach(function (el) {
-    this.normalizedA += el * el
-  })
-  b.forEach(function (el) {
-    this.normalizedB += el * el
-  })
-
-  normalizedA = Math.sqrt(normalizedA)
-  normalizedB = Math.sqrt(normalizedB)
-
-  // console.log(normalizedA, normalizedB)
-
-  return (multiply(a, b) / (normalizedA * normalizedB))
+    console.log(`frame id : \x1b[36m${frame.id}\x1b[0m, \x1b[36m${timeDelta / 1000}\x1b[0m seconds every 10 frames`)
+  }
 }
 
 function processAngle(clip, mix, angle) {
@@ -27,8 +26,6 @@ function processAngle(clip, mix, angle) {
     return Math.min(clip[index], value) / clip[index]
   })
   return angle[0] * mix[0] + angle[1] * mix[1] + angle[2] * mix[2]
-
-  // return Math.min(clip[0], angle[0]) * mix[0] + Math.min(clip[1], angle[1]) * mix[1] + Math.min(clip[2], angle[2]) * mix[2]
 
 }
 
@@ -43,23 +40,6 @@ const CustomFingers = function (data) {
 
 CustomFingers.prototype.getBends = function () {
   // clip and mix for each joints in fingers
-  // const options = {
-  //   clip: {
-  //     0: [0.25, 0.28, 0.3],
-  //     1: [0.7, 0.6, 0.5],
-  //     2: [0.7, 0.6, 0.5],
-  //     3: [0.7, 0.6, 0.5],
-  //     4: [0.7, 0.6, 0.5]
-  //   },
-  //   mix: {
-  //     0: [0.3, 0, 0.7],
-  //     1: [0.6, 0.3, 0.1],
-  //     2: [0.6, 0.3, 0.1],
-  //     3: [0.6, 0.3, 0.1],
-  //     4: [0.6, 0.3, 0.1]
-  //   }
-  // }
-
   // get options from options.json
   const options = jsonContent
 
@@ -87,18 +67,22 @@ CustomFingers.prototype.getBends = function () {
   return this.bends
 }
 
-const Leap = require('leapjs');
+// console log out env mode : production or dev?
+const __DEV__ = process.env.NODE_ENV === 'development'
+
+console.log(`Hello, \x1b[33m clubgoldenflower \x1b[0m
+Program is running in ${!!process.env.NODE_ENV ? process.env.NODE_ENV:'production' } mode.
+`)
+
 const controller = new Leap.Controller();
 
-const { Client, Message } = require('node-osc')
+controller.on('connect', onConnect);
 
 controller.loop(function (frame) {
-    // console.log(frame.currentFrameRate)
-    // console.log(1 && frame.id % 3 == 1)
-    // console.log('connected')
+  __DEV__ && frameCheck(frame)
+
     if(frame.hands[0] && frame.id % 8 == 1) {
       const a = new CustomFingers(frame.hands[0].fingers)
-      // console.log(a.getBends())
       const bends = a.getBends()
 
       const msg = new Message('/fingers/processed')

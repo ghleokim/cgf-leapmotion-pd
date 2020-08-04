@@ -1,24 +1,23 @@
-function multiply(a, b) {
-  return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const math = require('./math.js');
+const angle = math.angle;
+
+const Leap = require('leapjs');
+const { Client, Message } = require('node-osc');
+
+let timestamp = Date.now()
+
+function onConnect () {
+  console.log('Device Connected')
 }
 
-function angle(a, b) {
-  this.normalizedA = 0
-  this.normalizedB = 0
+function frameCheck (frame) {
+  if(frame.id % 10 === 0) {
+    curTime = Date.now();
+    timeDelta = curTime - timestamp;
+    timestamp = curTime;
 
-  a.forEach(function (el) {
-    this.normalizedA += el * el
-  })
-  b.forEach(function (el) {
-    this.normalizedB += el * el
-  })
-
-  normalizedA = Math.sqrt(normalizedA)
-  normalizedB = Math.sqrt(normalizedB)
-
-  // console.log(normalizedA, normalizedB)
-
-  return (multiply(a, b) / (normalizedA * normalizedB))
+    console.log(`frame id : \x1b[36m${frame.id}\x1b[0m, \x1b[36m${timeDelta / 1000}\x1b[0m seconds every 10 frames`)
+  }
 }
 
 const CustomFingers = function (data) {
@@ -64,19 +63,23 @@ CustomFingers.prototype.getBends = function () {
   return this.bends
 }
 
-const Leap = require('leapjs');
+// console log out env mode : production or dev?
+const __DEV__ = process.env.NODE_ENV === 'development'
+
+console.log(`Hello, \x1b[33m clubgoldenflower \x1b[0m
+Program is running in ${!!process.env.NODE_ENV ? process.env.NODE_ENV:'production' } mode.
+`)
+
 const controller = new Leap.Controller();
 
-const { Client, Message } = require('node-osc')
+controller.on('connect', onConnect);
 
 controller.loop(function (frame) {
+  __DEV__ && frameCheck(frame)
   
-    // console.log('connected')
     if(frame.hands[0]) {
       const a = new CustomFingers(frame.hands[0].fingers)
-      // console.log(a.getBends())
       const bends = a.getBends()
-
       const msg = new Message('/fingers/raw')
       msg.append('thumb')
       msg.append(bends[0].angle)
