@@ -1,21 +1,12 @@
 # cgf-leapmotion-pd
 
-## Added
-
-2020-01-12 추가
-v0.1.0 : 초기 버전
-- 링크 https://github.com/ghleokim/cgf-leapmotion-pd/tree/v0.1.0
-
-v0.1.1 : 높낮이 정보 추가
-- 링크 https://github.com/ghleokim/cgf-leapmotion-pd/tree/v0.1.1
-
 ## Environment
 
-MacOS 10.13.6
+- MacOS 10.13.6 (윈도 10은 [이 문서](./docs/troubleshooting-for-win10.md)를 참고해주세요.)
 
-pd 0.49.1-i386
+- pd 0.49.1-i386
 
-node v12.13.0 (comes with npm 6.12.0)
+- node v12.13.0 or higher (comes with npm 6.12.0)
 
 
 ## Installation
@@ -51,11 +42,15 @@ node v12.13.0 (comes with npm 6.12.0)
 
     - `node-osc-pd-02.pd` 실행시
         
-        `node main.js`
+        `npm run start`
 
     - `node-osc-pd-03-processed.pd` 실행시
 
-        `node main-processed.js`
+        `npm run processed-start`
+
+## Tips
+
+- [윈도 10 환경에서 Leap Motion 인식 안되는 문제 해결](./docs/troubleshooting-for-win10.md)
 
 
 ## Contact
