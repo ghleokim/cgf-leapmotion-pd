@@ -11,7 +11,7 @@
         "processed-debug": "NODE_ENV=development node main-processed.js"
     },
     "dependencies": {
-        "leapjs": "^0.6.4",
+        "leapjs": "^1.1.1",
         "node-osc": "^5.1.0",
         "ws": "1.1.5"
     },
